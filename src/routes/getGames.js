@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { getAllGamesByName } = require('../controllers/getGamesByName.js');
-const { getGamesinfo } = require('../controllers/getGamesinfo.js')
+const { getGamesinfo } = require('../controllers/getGamesInfo.js')
 
 
 const router = Router();
