@@ -5,7 +5,12 @@ const { Videogame, Genre } = require('../db.js');
 const getApiInfoByName = async (name) => {
     let gamesByName = []
     try {
-        const ApiGamesByName = await axios.get(`https://api.rawg.io/api/games?key=fe0415ea52474be795146cbef5787185&search=${name}`)
+        const ApiGamesByName = await axios.get(`https://api.rawg.io/api/games?key=fe0415ea52474be795146cbef5787185&search=${name}`,{
+            headers: {
+                'Accept': '*/*',
+                'Accept-Encoding': 'gzip, deflate, br'
+              }
+        })
         ApiGamesByName.data.results.map(juego => {
             if (gamesByName.length < 15){
                 gamesByName.push({

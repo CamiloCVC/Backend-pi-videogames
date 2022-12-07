@@ -3,7 +3,12 @@ const { Genre } = require('../db.js');
 
 const getAllGenders = async () => {
     try {
-      const url = await axios.get(`https://api.rawg.io/api/genres?key=fe0415ea52474be795146cbef5787185`)
+      const url = await axios.get(`https://api.rawg.io/api/genres?key=fe0415ea52474be795146cbef5787185`,{
+        headers: {
+          'Accept': '*/*',
+          'Accept-Encoding': 'gzip, deflate, br'
+        }
+      })
       url.data.results.map(async genero => {
         const [genre,created] = await Genre.findOrCreate({ 
             where: { 

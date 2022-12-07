@@ -6,7 +6,12 @@ const getApiInfo = async () => {
     let juegos = []
     try {
         for(let i = 0; i < 5; i++){
-            const resp = await axios.get(url)
+            const resp = await axios.get(url,{
+                headers: {
+                    'Accept': '*/*',
+                    'Accept-Encoding': 'gzip, deflate, br'
+                  }
+            })
             resp.data.results.map( juego => {
                 juegos.push({
                     id: juego.id,
