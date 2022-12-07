@@ -5,8 +5,8 @@ const getAllGenders = async () => {
     try {
       const url = await axios.get(`https://api.rawg.io/api/genres?key=fe0415ea52474be795146cbef5787185`,{
         headers: {
-          'Accept': '*/*',
-          'Accept-Encoding': 'gzip, deflate, br'
+          // 'Accept': '*/*',
+          'Accept-Encoding': "null"
         }
       })
       url.data.results.map(async genero => {

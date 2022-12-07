@@ -7,8 +7,8 @@ const getApiInfoByName = async (name) => {
     try {
         const ApiGamesByName = await axios.get(`https://api.rawg.io/api/games?key=fe0415ea52474be795146cbef5787185&search=${name}`,{
             headers: {
-                'Accept': '*/*',
-                'Accept-Encoding': 'gzip, deflate, br'
+                // 'Accept': '*/*',
+                'Accept-Encoding': "null"
               }
         })
         ApiGamesByName.data.results.map(juego => {

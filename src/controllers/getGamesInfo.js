@@ -8,8 +8,8 @@ const getApiInfo = async () => {
         for(let i = 0; i < 5; i++){
             const resp = await axios.get(url,{
                 headers: {
-                    'Accept': '*/*',
-                    'Accept-Encoding': 'gzip, deflate, br'
+                    // 'Accept': '*/*',
+                    'Accept-Encoding': "null"
                   }
             })
             resp.data.results.map( juego => {

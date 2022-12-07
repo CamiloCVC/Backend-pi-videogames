@@ -5,10 +5,11 @@ const { Videogame, Genre } = require('../db.js');
 const getApiGameById = async (id) =>{
     let gameById = []
     try {
-        let ApiGamesById = await axios.get(`https://api.rawg.io/api/games/${id}?key=fe0415ea52474be795146cbef5787185`,{ headers: {
-            'Accept': '*/*',
-            'Accept-Encoding': 'gzip, deflate, br'
-          }})
+        let ApiGamesById = await axios({
+            method: "get",
+            url: `https://api.rawg.io/api/videogames/${id}?key=fe0415ea52474be795146cbef5787185`,
+            headers: { "Accept-Encoding": "null" },
+          })
         gameById.push({
             id: ApiGamesById.data.id,
             name: ApiGamesById.data.name,
